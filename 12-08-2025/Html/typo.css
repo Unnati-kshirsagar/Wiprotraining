@@ -1,0 +1,18 @@
+body {
+    background-color: #cf81a8; /* Light blue background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #7c0082; /* Indigo headings */
+}
+
+p {
+    font-size: 20px;
+    
+}
+
+blockquote {
+    background-color: #fc5252;
+    padding: 15px;
+    border-left: 5px solid #ff9800;
+}

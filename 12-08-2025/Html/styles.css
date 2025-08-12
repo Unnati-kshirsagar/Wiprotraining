@@ -1,0 +1,32 @@
+h1 { 
+    font-size: 40px;
+    text-align: center;
+}
+
+* { 
+    color: green;
+}
+
+#header { 
+    background-color: lightblue;
+}
+
+.class1 { 
+    color: aqua;
+    font-style: italic;    
+}
+
+.class2 { 
+    color: red;
+    font-weight: bold;
+}
+
+.class3 { 
+    color: blue;
+    font-size: 50px;
+}
+
+h1, h2, h3 { 
+    color: purple;
+    font-size: 30px;
+}

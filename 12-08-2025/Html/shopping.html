@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BlushBloom - Girly Clothing Brand</title>
+  <style>
+    /* Using safe system fonts instead of Google Fonts */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #fff0f6; /* very light pink */
+      color: #4a148c; /* dark purple */
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 0 15px 30px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 4px 12px rgba(186, 104, 200, 0.25);
+      padding: 18px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-radius: 16px 16px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      /* fallback to cursive system fonts */
+      font-family: cursive, 'Comic Sans MS', 'Comic Sans', cursive;
+      font-size: 32px;
+      color: #ba68c8; /* soft purple */
+      letter-spacing: 1.3px;
+      cursor: default;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #7e57c2; /* medium purple */
+      text-decoration: none;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 12px;
+      font-size: 15px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 2px 6px transparent;
+    }
+
+    nav a:hover {
+      background-color: #ba68c8; /* soft purple */
+      color: white;
+      box-shadow: 0 6px 16px rgba(186, 104, 200, 0.25);
+    }
+
+    section {
+      padding: 0 10px 30px;
+    }
+
+    section h2 {
+      font-family: cursive, 'Comic Sans MS', 'Comic Sans', cursive;
+      font-size: 28px;
+      margin-bottom: 22px;
+      font-weight: 400;
+      color: #ba68c8;
+      border-bottom: 3px solid #ba68c8;
+      display: inline-block;
+      padding-bottom: 6px;
+      letter-spacing: 1.1px;
+    }
+
+    /* Product grid */
+    #products ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #products li {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(186, 104, 200, 0.25);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 12px;
+      text-align: center;
+      gap: 8px;
+    }
+
+    #products li:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(186, 104, 200, 0.45);
+    }
+
+    #products img {
+      width: 160px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 16px;
+      filter: brightness(0.95);
+      transition: filter 0.3s ease;
+      box-shadow: 0 4px 10px rgba(186, 104, 200, 0.3);
+    }
+
+    #products li:hover img {
+      filter: brightness(1);
+      box-shadow: 0 8px 18px rgba(186, 104, 200, 0.55);
+    }
+
+    #products h3 {
+      font-size: 18px;
+      color: #f48fb1; /* pastel pink */
+      letter-spacing: 0.6px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    #products p {
+      font-weight: 700;
+      color: #ba68c8; /* soft purple */
+      font-size: 16px;
+      margin: 0;
+    }
+
+    /* Text styling for other sections */
+    #home p,
+    #about p,
+    #contact p {
+      max-width: 650px;
+      font-size: 17px;
+      color: #7e57c2; /* medium purple */
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    /* Social media icons container */
+    #social-media {
+      margin-top: 10px;
+      display: flex;
+      gap: 15px;
+      font-size: 24px;
+      color: #ba68c8;
+      justify-content: center;
+    }
+    #social-media a {
+      text-decoration: none;
+      color: #ba68c8;
+      transition: color 0.3s ease;
+    }
+    #social-media a:hover {
+      color: #f48fb1;
+    }
+
+    /* Footer */
+    footer {
+      background: white;
+      color: #ba68c8;
+      text-align: center;
+      padding: 20px 15px;
+      margin-top: auto;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      box-shadow: 0 -4px 12px rgba(186, 104, 200, 0.25);
+      border-radius: 0 0 16px 16px;
+      font-family: cursive, 'Comic Sans MS', 'Comic Sans', cursive;
+      font-size: 18px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding-bottom: 20px;
+      }
+      header h1 {
+        font-size: 26px;
+      }
+      nav {
+        gap: 12px;
+      }
+      nav a {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+      #products img {
+        width: 130px;
+        height: 170px;
+      }
+      #products h3 {
+        font-size: 16px;
+      }
+      #products p {
+        font-size: 14px;
+      }
+      section h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+      #home p,
+      #about p,
+      #contact p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BlushBloom</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Collections</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home">
+  <h2>Welcome to BlushBloom</h2>
+  <p>Embrace your femininity with our curated collection of soft, elegant, and trendy clothing designed to make you shine every day.</p>
+</section>
+
+<section id="products">
+  <h2>Our Collections</h2>
+  <ul>
+    <li>
+      <img src="https://media.istockphoto.com/id/1009480924/photo/photo-portrait-of-attractive-pretty-cute-lovable-fascinating-delicate-alluring-gorgeous-nice.webp?a=1&b=1&s=612x612&w=0&k=20&c=mfpOelzi2mw_9Q8jwSeMfbd21Wt8QR3Iigul5ZfNbB0=" alt="Floral Dress" />
+      <h3>Floral Dress</h3>
+      <p> Rs.899</p>
+    </li>
+    <li>
+      <img src="https://plus.unsplash.com/premium_photo-1671826911268-2b52e425b3f3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBpbmslMjBzd2VhdGVyfGVufDB8fDB8fHww" alt="Pink Sweater" />
+      <h3>Pink Sweater</h3>
+      <p>Rs.1200</p>
+    </li>
+    <li>
+      <img src="https://plus.unsplash.com/premium_photo-1671379012427-ce867d9ac465?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VtbWVyJTIwc2tpcnR8ZW58MHx8MHx8fDA%3D" alt="Summer Skirt" />
+      <h3>Summer Skirt</h3>
+      <p>Rs.699</p>
+    </li>
+    <li>
+      <img src="https://plus.unsplash.com/premium_photo-1723773743655-71e6b5961089?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2hpdGUlMjBzbmVha2Vyc3xlbnwwfHwwfHx8MA%3D%3D" alt="White Sneakers" />
+      <h3>White Sneakers</h3>
+      <p>Rs.2000</p>
+    </li>
+    <li>
+      <img src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="Pastel Blouse" />
+      <h3>Tshirt</h3>
+      <p>Rs.499</p>
+    </li>
+    <li>
+      <img src="https://media.istockphoto.com/id/481090958/photo/the-season-for-snuggly-sweaters.webp?a=1&b=1&s=612x612&w=0&k=20&c=nUqkLjj1LAC1kFYm74uTK7ZUCpo5qO5bL1jQEBRR5wM=" alt="Cozy Cardigan" />
+      <h3>Cozy Cardigan</h3>
+      <p>Rs.799</p>
+    </li>
+    <li>
+      <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGluayUyMGNvYXR8ZW58MHx8MHx8fDA%3D" alt="Light Pink Coat" />
+      <h3>Light Pink Coat</h3>
+      <p>Rs.3000</p>
+    </li>
+    <li>
+      <img src="https://images.unsplash.com/photo-1572307480813-ceb0e59d8325?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhhdHN8ZW58MHx8MHx8fDA%3D" alt="Elegant Hat" />
+      <h3>Elegant Hat</h3>
+      <p>Rs.599</p>
+    </li>
+  </ul>
+</section>
+
+<section id="about">
+  <h2>About BlushBloom</h2>
+  <p>BlushBloom is dedicated to empowering women with soft, sustainable fashion. Our designs celebrate grace, charm, and individuality, all wrapped in a girly pastel palette.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: hello@blushbloom.com</p>
+  <p>Phone: +1 555 987 6543</p>
+
+  <div id="social-media" aria-label="Social media links">
+    <a href="https://instagram.com/blushbloom" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#ba68c8" height="24" width="24" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.62 1.5a.87.87 0 11-.87-.87.87.87 0 01.87.87zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>
+    </a>
+    <a href="https://facebook.com/blushbloom" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#ba68c8" height="24" width="24" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.5 9.87v-6.98h-2.3v-2.9h2.3v-2.2c0-2.28 1.36-3.53 3.44-3.53.99 0 2.02.18 2.02.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42v1.9h2.5l-.4 2.9h-2.1v6.98A10 10 0 0022 12"/></svg>
+    </a>
+    <a href="mailto:hello@blushbloom.com" aria-label="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#ba68c8" height="24" width="24" viewBox="0 0 24 24"><path d="M2 6v12h20V6H2zm18 2.18l-8 5-8-5V8l8 5 8-5v.18z"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 BlushBloom. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

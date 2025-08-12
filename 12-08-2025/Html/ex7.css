@@ -1,0 +1,13 @@
+.text-box {
+    width: 400px;
+    background-color: lightyellow;
+    border: 2px solid black;
+
+    /* Moves the whole div using margin */
+    margin: 50px 0 0 100px; /* top right bottom left */
+
+    /* Adds space inside the div */
+    padding: 10px 20px 5px 90px; /* top right bottom left */
+
+    font-family: Arial, sans-serif;
+}
