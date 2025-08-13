@@ -1,0 +1,81 @@
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  background-color: #f4f4f9;
+  color: #333;
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Question box */
+#question {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Option buttons */
+.option {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  width: 220px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #888;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: 0.2s;
+}
+
+.option:hover {
+  background-color: #e0e0e0;
+}
+
+/* Disabled button */
+.option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Feedback text */
+#feedback {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 18px;
+  min-height: 24px;
+}
+
+/* Score display */
+p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Next button */
+#nextBtn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#nextBtn:hover {
+  background-color: #45a049;
+}
+
+#nextBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
